@@ -25,19 +25,29 @@
     <section id="produtos" action="/produtos" method="GET" name="cadastro">
 
         <h2>Produtos</h2>
-        
+
+        <% if(message != "") { %>
+            <section id="message">
+              <p><%=message%></p><span id="close">&times;</span>
+          </section>
+        <% } %>
+
         <% portfolio.forEach((tenis) => { %>
         
-        <div>
-            <h2><%=tenis.nome%></h2>
+        <div class="container">
+            <h3><%=tenis.nome%></h3>
             <img src="<%=tenis.imagem%>" alt="">
             <p>Tamanho: <%=tenis.tamanho%></p>
             <p>Cor: <%=tenis.cor%></p>
             
-            
+            <a id="btnEditar" href="/update/<%= tenis.id %>">Editar</a>
             <a id="btnApagar" href="/delete/<%= tenis.id %>">Apagar</a>
-            <button id="btnDetalhes" href="/detalhes" value="<%=tenis.id%>"  onclick = " Mudarestado('.detalhes', this.value) ">Especificação</button>
+            <button id="btnDetalhes" href="/detalhes" value="<%=tenis.id%>"  onclick = " Mudarestado('.detalhes', this.value) ">Ver Mais</button>
             
+          
+        </div>
+        <section class="secaoProdutos">
+
             <div  style="display:none" class ="detalhes">
   
                 <p>Descrição: <%= tenis.descricao %>
@@ -46,11 +56,11 @@
                 </p>
                 <p>ID: <%= tenis.id %>
                 </p>
-                <p>Altura: <%= tenis.material %>
+                <p>Material: <%= tenis.material %>
                 </p>
                
             </div>
-        </div>
+        </section>
         
         <% }); %>
         
@@ -60,10 +70,12 @@
 
     
     <footer>
-
+        <a href="/">Inicio</a>
+        <a href="/#cadastro">Cadastro</a>
+        <a href="/produtos ">Produtos</a>
         <p>&#9743; (41) 9.1911-3434</p>
         <p>&#9993; vk@vk.com</p>
-        <p>  Sobre a Empresa: &#10100; Referência em vendas e distribuição de produtos, trabalhamos apenas com as melhores marcas nacionais e importadas. Entregamos para todo Brasil. &#10101;</p>
+        <p>  Sobre a Empresa: &#10100; Referência em vendas e distribuição de produtos.Entregamos para todo Brasil. &#10101;</p>Entregamos para todo Brasil. 
        
 
     </footer>

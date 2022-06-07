@@ -3,9 +3,15 @@ function Mudarestado(el, id) {
     let display = document.querySelectorAll(el)[id - 1].style.display;
 
     if (display == "none") {
-        document.querySelectorAll(el)[id - 1].style.display = 'block';
+        document.querySelectorAll(el)[id - 1].style.display = 'flex';
     }
     else {
         document.querySelectorAll(el)[id - 1].style.display = 'none';
     }
 }
+const closeMessage = document.querySelector("#close")
+const message = document.querySelector("#message")
+
+closeMessage.addEventListener("click", function (){
+    message.style.display = "none"
+})
