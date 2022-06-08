@@ -14,4 +14,24 @@ const message = document.querySelector("#message")
 
 closeMessage.addEventListener("click", function (){
     message.style.display = "none"
-})
+});
+
+
+
+
+const imgs = document.getElementById("img");
+const img = document.querySelectorAll("#img img");
+
+let idx = 0 ;
+
+function carrossel() {
+    idx++;
+
+    if( idx > img.length -1){
+        i = 0;
+
+    }
+    
+    imgs.style.trasform =`translateX(${-idx * 500}px)`;
+}
+setInterval(carrossel, 1800);

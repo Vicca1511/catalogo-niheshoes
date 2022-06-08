@@ -4,12 +4,15 @@
     margin: 0;
     padding: 0;
     font-family: 'Tillana' , Arial, Helvetica, sans-serif;
-    
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
+
+
 body {
      background: radial-gradient(closest-side, #3f87a6, #ebf8e1, #f69d3c);
      background-repeat: no-repeat;
-     width: 100%;
+     
 
     
     
@@ -41,7 +44,27 @@ nav a{
     font-weight: 700;
     
 }
+.carousel{
+    box-shadow: 2rem 2rem 4rem black;
+    overflow: hidden ;
+    height: 500px ;
+    width: 500px ;
+    margin: 10rem 0 0 42rem;
+}
+.container{
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    transform:translateX(0) ;
+    
 
+}
+img{
+
+    object-fit: cover;
+    height:500px;
+    width: 500px;
+    
+}
 
 body h1{
     display: flex
